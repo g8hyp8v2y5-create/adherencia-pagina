@@ -689,8 +689,8 @@ html:not(.con-domicilio) .kb.two:has([data-domicilio]){grid-template-columns:1fr
       document.querySelectorAll("[data-qr]").forEach(function(box){ box.innerHTML = svg; });
     }
   }
-  // Compartir: el mensaje lleva a esta página marcada como "compartido".
-  var ENLACE = "https://farmazon.pages.dev/?c=compartido";
+  // Compartir: el mensaje lleva a esta misma página (la dirección donde se abrió) marcada como "compartido".
+  var ENLACE = (/^https?:$/.test(location.protocol) ? location.origin : "https://adherencia-farmaceutica.pages.dev") + "/?c=compartido";
   var MENSAJE = "Hola 👋 Le comparto Fármazon, por si le sirve a usted o a alguien de su familia: por Telegram le recuerdan cada medicina a la hora exacta y, si no se confirma la toma, avisan a los contactos de emergencia a los 20 minutos. El primer mes es gratis. Toda la información aquí: " + ENLACE;
   var wa = document.getElementById("compartir-wa");
   if (wa) wa.href = "https://wa.me/?text=" + encodeURIComponent(MENSAJE);
