@@ -243,6 +243,7 @@ html:not(.con-domicilio) .kb.two:has([data-domicilio]){grid-template-columns:1fr
 .dudas-card .cta-note{color:#4f607a}
 .dudas-card .cta-note a{color:#0343a6}
 .dudas-card .cta{background:#0343a6;color:#ffffff}
+.dudas-card .cta.wa{background:var(--wa);color:var(--wa-ink)}
 @media (max-width:900px){.dudas-card{grid-template-columns:1fr;padding:24px}}
 .qr-card{background:#ffffff;color:#0f1f3d;border:1px solid var(--line);border-radius:24px;padding:24px;display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;box-shadow:0 18px 40px -28px rgba(3,67,166,.6)}
 .qr-card b{font-family:var(--display);font-size:1.15rem}
@@ -638,11 +639,12 @@ html:not(.con-domicilio) .kb.two:has([data-domicilio]){grid-template-columns:1fr
       <div class="stack" style="gap:18px">
         <span class="eyebrow">¿Tiene dudas o preguntas?</span>
         <h2>Pregúntenos antes de empezar</h2>
-        <p class="lead">Toque el botón y se abre nuestro chat en Telegram. Ahí le respondemos todo, sin compromiso y sin pedirle datos. Si prefiere, le pedimos su número y lo llamamos.</p>
+        <p class="lead">Escríbanos por Telegram o por WhatsApp al <b>318 946 5894</b>. Le respondemos todo, sin compromiso y sin pedirle datos. Si prefiere, le pedimos su número y lo llamamos.</p>
         <div class="actions">
           <a class="cta" data-dudas href="#telegram">💬 Resolver mis dudas en Telegram</a>
+          <a class="cta wa" data-wa href="https://wa.me/573189465894" target="_blank" rel="noopener">🟢 Escribirnos por WhatsApp</a>
         </div>
-        <p class="cta-note">¿No tiene Telegram? <a href="#telegram">Aquí le explicamos cómo descargarlo</a>: es gratis y toma 2 minutos.</p>
+        <p class="cta-note">Por favor no nos escriba datos de salud por chat. ¿No tiene Telegram? <a href="#telegram">Aquí le explicamos cómo descargarlo</a>: es gratis y toma 2 minutos.</p>
       </div>
       <ul class="dudas-list">
         <li>Empezar no cuesta nada</li>
@@ -658,6 +660,7 @@ html:not(.con-domicilio) .kb.two:has([data-domicilio]){grid-template-columns:1fr
 <footer>
   <div class="wrap">
     <span><b>Fármazon</b> · Programa de Adherencia Farmacéutica · Ibagué, Colombia</span>
+    <span>WhatsApp: <a href="https://wa.me/573189465894" data-wa target="_blank" rel="noopener">318 946 5894</a></span>
     <span>Le ayudamos a cumplir el tratamiento que le formuló su médico; no reemplaza su indicación. Tratamiento de datos según la Ley 1581 de 2012: <a href="privacidad.html">política de tratamiento de datos</a>.</span>
   </div>
 </footer>
@@ -689,6 +692,10 @@ html:not(.con-domicilio) .kb.two:has([data-domicilio]){grid-template-columns:1fr
       document.querySelectorAll("[data-qr]").forEach(function(box){ box.innerHTML = svg; });
     }
   }
+  // WhatsApp de Fármazon (318 946 5894): el saludo lleva la campaña para medir de dónde escriben.
+  document.querySelectorAll("[data-wa]").forEach(function(a){
+    a.href = "https://wa.me/573189465894?text=" + encodeURIComponent("Hola, quiero saber más de Fármazon. (ref " + camp + ")");
+  });
   // Compartir: el mensaje lleva a esta misma página (la dirección donde se abrió) marcada como "compartido".
   var ENLACE = (/^https?:$/.test(location.protocol) ? location.origin : "https://adherencia-farmaceutica.pages.dev") + "/?c=compartido";
   var MENSAJE = "Hola 👋 Le comparto Fármazon, por si le sirve a usted o a alguien de su familia: por Telegram le recuerdan cada medicina a la hora exacta y, si no se confirma la toma, avisan a los contactos de emergencia a los 20 minutos. El primer mes es gratis. Toda la información aquí: " + ENLACE;
