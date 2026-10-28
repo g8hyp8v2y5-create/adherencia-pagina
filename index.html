@@ -598,7 +598,7 @@ html:not(.con-domicilio) .kb.two:has([data-domicilio]){grid-template-columns:1fr
   </div>
 </footer>
 
-<a class="wa-flotante" data-wa="pregunta" data-ref-extra="_flotante" href="https://wa.me/573189465894" target="_blank" rel="noopener" aria-label="Escribirnos por WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.2a9.8 9.8 0 0 0-8.4 14.8L2.2 21.8l4.9-1.3A9.8 9.8 0 1 0 12 2.2Zm0 1.9a7.9 7.9 0 1 1-4.1 14.6l-.3-.2-2.9.8.8-2.8-.2-.3A7.9 7.9 0 0 1 12 4.1Zm-3.1 3.8c-.2 0-.5 0-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.2 5 4.4 2.5 1 3 .8 3.5.7.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.4l-2-1c-.3-.1-.5-.1-.7.2l-.9 1.1c-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.4.1-.6l.5-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.5-.4-.5-.6-.5h-.4Z"/></svg></a>
+<a class="wa-flotante" data-wa="flotante" href="https://wa.me/573189465894" target="_blank" rel="noopener" aria-label="Escribirnos por WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.2a9.8 9.8 0 0 0-8.4 14.8L2.2 21.8l4.9-1.3A9.8 9.8 0 1 0 12 2.2Zm0 1.9a7.9 7.9 0 1 1-4.1 14.6l-.3-.2-2.9.8.8-2.8-.2-.3A7.9 7.9 0 0 1 12 4.1Zm-3.1 3.8c-.2 0-.5 0-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.2 5 4.4 2.5 1 3 .8 3.5.7.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.4l-2-1c-.3-.1-.5-.1-.7.2l-.9 1.1c-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.4.1-.6l.5-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.5-.4-.5-.6-.5h-.4Z"/></svg></a>
 
 <script src="js/qrcode.min.js"></script>
 <script>
@@ -612,11 +612,12 @@ html:not(.con-domicilio) .kb.two:has([data-domicilio]){grid-template-columns:1fr
   if (!/^(meta_|tiktok_|google)/.test(camp)) document.documentElement.classList.add("con-domicilio");
   var d = document.getElementById("borrador"); if (d) d.hidden = true;
   // El saludo lleva la campaña ("ref") para medir de dónde escriben; el QR termina en _qr.
-  var SALUDO = { empezar: "Hola, quiero empezar mi mes gratis de Fármazon.", pregunta: "Hola, quiero saber más de Fármazon." };
+  var SALUDO = { empezar: "Hola, quiero empezar mi mes gratis de Fármazon.", pregunta: "Hola, quiero saber más de Fármazon.",
+    // El flotante se mide por su saludo propio; la ref queda igual en todos los botones.
+    flotante: "Hola, quiero información de Fármazon." };
   function enlaceWa(tipo, ref){ return WA + "?text=" + encodeURIComponent((SALUDO[tipo] || SALUDO.pregunta) + " (ref " + ref + ")"); }
   document.querySelectorAll("[data-wa]").forEach(function(a){
-    // data-ref-extra marca de dónde salió el clic (por ejemplo "_flotante") para medirlo aparte.
-    a.href = enlaceWa(a.getAttribute("data-wa"), camp + (a.getAttribute("data-ref-extra") || "")); a.target = "_blank"; a.rel = "noopener";
+    a.href = enlaceWa(a.getAttribute("data-wa"), camp); a.target = "_blank"; a.rel = "noopener";
   });
   if (window.qrcode) {
     var qr = qrcode(0, "M");
