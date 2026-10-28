@@ -6,12 +6,12 @@
 <link rel="icon" href="img/farmazon-emblema.png">
 <title>Fármazon Adherencia</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Un equipo que acompaña cada toma de medicamento de su familiar por Telegram, con aviso a la familia. Primer mes gratis.">
+<meta name="description" content="Un equipo que acompaña cada toma de medicamento de su familiar, con aviso a la familia. Primer mes gratis.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;700;800&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700;6..12,800&display=swap">
 <style>
-/* Diseño: relato de una sola columna que baja del problema (la hora que se pasa) a la solución (el equipo que acompaña cada toma), con un celular de Telegram como pieza central y los tres azules del logo de Fármazon. */
+/* Diseño: relato de una sola columna que baja del problema (la hora que se pasa) a la solución (el equipo que acompaña cada toma), con un celular de chat como pieza central y los tres azules del logo de Fármazon. */
 :root{
   --bg:#f3f7fd; --surface:#ffffff; --ink:#0f1f3d; --muted:#4f607a; --line:#d6e2f2;
   --brand:#0343a6; --brand-mid:#3370c8; --brand-sky:#5ca8dc; --band-ink:#ffffff;
@@ -224,14 +224,14 @@ footer .wrap{display:flex;flex-direction:column;gap:8px}
 [data-domicilio]{display:none}
 html.con-domicilio [data-domicilio]{display:revert}
 html:not(.con-domicilio) .kb.two:has([data-domicilio]){grid-template-columns:1fr}
-/* Compartir por WhatsApp y código QR para abrir el bot desde el celular */
+/* Compartir por WhatsApp y código QR para escribirnos desde el celular */
 .share{background:var(--surface);border-top:1px solid var(--line)}
 .share-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:44px;align-items:center}
 .share-grid > *{min-width:0}
 .cta.wa{background:var(--wa);color:var(--wa-ink);box-shadow:0 12px 26px -12px rgba(26,127,69,.7)}
 .btn-line{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:transparent;color:var(--accent);border:2px solid var(--line);font:inherit;font-weight:800;font-size:1.05rem;padding:15px 24px;border-radius:999px;cursor:pointer}
 .btn-line:hover{border-color:var(--accent)}
-/* ¿Tiene dudas?: abre el bot en modo preguntas (start=dudas_<campaña>), sin pedir datos */
+/* ¿Tiene dudas?: abre el WhatsApp de Fármazon, sin pedir datos */
 .dudas{background:var(--bg);border-top:1px solid var(--line)}
 .dudas-card{display:grid;grid-template-columns:1.25fr .75fr;gap:32px;align-items:center;background:#ffffff;color:#0f1f3d;border:1px solid var(--line);border-radius:24px;padding:32px;box-shadow:0 18px 40px -28px rgba(3,67,166,.6)}
 .dudas-card > *{min-width:0}
@@ -268,7 +268,7 @@ html:not(.con-domicilio) .kb.two:has([data-domicilio]){grid-template-columns:1fr
     <img class="mark" src="img/farmazon-emblema.png" alt="">
     <img class="word" src="img/farmazon-texto.png" alt="Fármazon">
   </a>
-  <a class="link" href="#telegram">¿No tiene Telegram?</a>
+  <a class="link" data-wa="pregunta" href="https://wa.me/573189465894" target="_blank" rel="noopener">WhatsApp 318 946 5894</a>
 </header>
 
 <main id="inicio">
@@ -277,22 +277,22 @@ html:not(.con-domicilio) .kb.two:has([data-domicilio]){grid-template-columns:1fr
     <div class="stack" style="gap:24px">
       <div class="clock"><b>8:00</b> a. m. La hora en que nadie está mirando.</div>
       <h1>Su papá no se olvidó de usted. Se olvidó de su pastilla.</h1>
-      <p class="lead">En Fármazon acompañamos a su familiar en cada toma, a la hora exacta, por Telegram. Él nos confirma con un botón o con una foto. Y si no responde, le avisamos a usted de inmediato.</p>
+      <p class="lead">En Fármazon acompañamos a su familiar en cada toma, a la hora exacta. Él nos confirma con un botón o con una foto. Y si no responde, le avisamos a usted de inmediato.</p>
       <span class="free">🎁 Primer mes gratis, con todo incluido</span>
       <div class="actions">
-        <a class="cta" data-bot href="#telegram">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21.9 4.6 18.7 19.6c-.2 1-.9 1.3-1.8.8l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.3-5 9.1-8.2c.4-.4-.1-.6-.6-.2L6.2 13.3l-4.8-1.5c-1-.3-1-1 .2-1.5L20.6 3c.9-.3 1.6.2 1.3 1.6Z"/></svg>
+        <a class="cta wa" data-wa="empezar" href="https://wa.me/573189465894" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.2a9.8 9.8 0 0 0-8.4 14.8L2.2 21.8l4.9-1.3A9.8 9.8 0 1 0 12 2.2Zm0 1.9a7.9 7.9 0 1 1-4.1 14.6l-.3-.2-2.9.8.8-2.8-.2-.3A7.9 7.9 0 0 1 12 4.1Zm-3.1 3.8c-.2 0-.5 0-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.2 5 4.4 2.5 1 3 .8 3.5.7.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.4l-2-1c-.3-.1-.5-.1-.7.2l-.9 1.1c-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.4.1-.6l.5-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.5-.4-.5-.6-.5h-.4Z"/></svg>
           Empezar mi mes gratis
         </a>
         <span class="cta-note">Sin tarjeta para empezar. Sin contratos.</span>
       </div>
       <div class="hero-qr">
-        <div class="qr-box" data-qr role="img" aria-label="Código QR para abrir Fármazon en Telegram desde el celular"></div>
+        <div class="qr-box" data-qr role="img" aria-label="Código QR para escribirle a Fármazon por WhatsApp desde el celular"></div>
         <span><b>¿Está en el computador?</b> Escanee este código con la cámara de su celular y empiece desde ahí.</span>
       </div>
     </div>
 
-    <div class="phone" role="img" aria-label="Ejemplo en Telegram: a las 8:00 a. m. Fármazon le escribe a Don Jorge, él envía la foto de su pastilla y recibe la confirmación">
+    <div class="phone" role="img" aria-label="Ejemplo: a las 8:00 a. m. Fármazon le escribe a Don Jorge, él envía la foto de su pastilla y recibe la confirmación">
       <div class="screen">
         <div class="tg-head">
           <img src="img/farmazon-emblema.png" alt="">
@@ -386,7 +386,7 @@ html:not(.con-domicilio) .kb.two:has([data-domicilio]){grid-template-columns:1fr
     <div class="stack">
       <span class="eyebrow">Ejemplos del servicio</span>
       <h2>Así se ve en el celular de cada uno.</h2>
-      <p class="lead">Mensajes cortos, claros y con botones grandes. Nada que instalar aparte de Telegram.</p>
+      <p class="lead">Mensajes cortos, claros y con botones grandes.</p>
     </div>
     <div class="examples">
       <div class="ex">
@@ -462,7 +462,7 @@ html:not(.con-domicilio) .kb.two:has([data-domicilio]){grid-template-columns:1fr
       <div class="inc"><span class="ico" aria-hidden="true">⏰</span><div><h3>A la hora exacta</h3><p>Todos los medicamentos y horarios que necesite, con el nombre y la dosis.</p></div></div>
       <div class="inc"><span class="ico" aria-hidden="true">📸</span><div><h3>Confirmación con foto</h3><p>Una foto de la pastilla en la mano o con el vaso de agua. Así no queda duda.</p></div></div>
       <div class="inc"><span class="ico" aria-hidden="true">👨‍👩‍👧</span><div><h3>Aviso a la familia</h3><p>Al hijo, al cuidador o a quien usted elija, en cada toma o solo cuando haga falta.</p></div></div>
-      <div class="inc"><span class="ico" aria-hidden="true">🆘</span><div><h3>Botón de emergencia</h3><p>Desde el menú, un toque y su familia recibe el aviso por Telegram al instante. No reemplaza la línea 123.</p></div></div>
+      <div class="inc"><span class="ico" aria-hidden="true">🆘</span><div><h3>Botón de emergencia</h3><p>Desde el menú, un toque y su familia recibe el aviso al instante. No reemplaza la línea 123.</p></div></div>
       <div class="inc"><span class="ico" aria-hidden="true">🔔</span><div><h3>Segundo aviso si no responde</h3><p>A los 10 minutos le volvemos a escribir, y a los 20 le avisamos a usted.</p></div></div>
       <div class="inc"><span class="ico" aria-hidden="true">🩺</span><div><h3>Registro de la presión</h3><p>Escribe sus números y quedan en el reporte para el médico.</p></div></div>
       <div class="inc"><span class="ico" aria-hidden="true">📄</span><div><h3>Reportes para el médico</h3><p>Diario, semanal, quincenal y mensual, en PDF o Excel.</p></div></div>
@@ -483,8 +483,8 @@ html:not(.con-domicilio) .kb.two:has([data-domicilio]){grid-template-columns:1fr
       <h2>El primer mes es gratis. Con absolutamente todo.</h2>
       <p class="lead">Queremos que lo vea funcionar con su familia antes de pagar un peso. Si no le sirve, no paga nada y sus datos se borran si así lo pide.</p>
       <div class="actions">
-        <a class="cta" data-bot href="#telegram">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21.9 4.6 18.7 19.6c-.2 1-.9 1.3-1.8.8l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.3-5 9.1-8.2c.4-.4-.1-.6-.6-.2L6.2 13.3l-4.8-1.5c-1-.3-1-1 .2-1.5L20.6 3c.9-.3 1.6.2 1.3 1.6Z"/></svg>
+        <a class="cta wa" data-wa="empezar" href="https://wa.me/573189465894" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.2a9.8 9.8 0 0 0-8.4 14.8L2.2 21.8l4.9-1.3A9.8 9.8 0 1 0 12 2.2Zm0 1.9a7.9 7.9 0 1 1-4.1 14.6l-.3-.2-2.9.8.8-2.8-.2-.3A7.9 7.9 0 0 1 12 4.1Zm-3.1 3.8c-.2 0-.5 0-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.2 5 4.4 2.5 1 3 .8 3.5.7.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.4l-2-1c-.3-.1-.5-.1-.7.2l-.9 1.1c-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.4.1-.6l.5-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.5-.4-.5-.6-.5h-.4Z"/></svg>
           Empezar mi mes gratis
         </a>
       </div>
@@ -504,77 +504,6 @@ html:not(.con-domicilio) .kb.two:has([data-domicilio]){grid-template-columns:1fr
   </div>
 </section>
 
-<section class="install" id="telegram">
-  <div class="wrap">
-    <div class="stack">
-      <span class="eyebrow">Dónde lo atendemos</span>
-      <h2>Lo acompañamos por Telegram. Le contamos por qué.</h2>
-      <p class="lead">Telegram es una aplicación de mensajes gratuita, como WhatsApp, con un avión de papel azul. La elegimos porque nos deja cuidar mejor a su familiar.</p>
-    </div>
-    <div class="why-grid">
-      <div class="why"><span class="ico" aria-hidden="true">💸</span><b>Es gratis</b><p>No paga nada por la aplicación, y funciona con wifi o con datos.</p></div>
-      <div class="why"><span class="ico" aria-hidden="true">👆</span><b>Botones grandes</b><p>Su familiar confirma con un toque, sin escribir.</p></div>
-      <div class="why"><span class="ico" aria-hidden="true">📸</span><b>Fotos y reportes</b><p>Recibe la foto de cada toma y descarga los reportes en PDF o Excel.</p></div>
-      <div class="why"><span class="ico" aria-hidden="true">🔔</span><b>Avisos al instante</b><p>Si su familiar no confirma, el aviso le llega a usted en segundos, esté donde esté.</p></div>
-      <div class="why"><span class="ico" aria-hidden="true">🔒</span><b>Más privado</b><p>Su información de salud queda en un chat aparte del de sus contactos.</p></div>
-      <div class="why"><span class="ico" aria-hidden="true">📱</span><b>En cualquier celular</b><p>Android o iPhone. Se instala una sola vez y no hay que hacer nada más.</p></div>
-    </div>
-
-    <div class="stack" style="margin-top:56px">
-      <h2 style="font-size:clamp(1.5rem,3.2vw,2.1rem)">¿No tiene Telegram? Se instala en 3 minutos.</h2>
-    </div>
-    <div class="tabs" role="tablist" aria-label="Tipo de celular">
-      <button role="tab" id="tab-android" aria-selected="true" aria-controls="pasos">Android</button>
-      <button role="tab" id="tab-iphone" aria-selected="false" aria-controls="pasos">iPhone</button>
-    </div>
-    <ol class="how" id="pasos" role="tabpanel">
-      <li><b>Abra la tienda</b>
-        <div class="mini"><span class="store"><i><svg width="22" height="22" viewBox="0 0 24 24"><path fill="#fff" d="M21.9 4.6 18.7 19.6c-.2 1-.9 1.3-1.8.8l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.3-5 9.1-8.2c.4-.4-.1-.6-.6-.2L6.2 13.3l-4.8-1.5c-1-.3-1-1 .2-1.5L20.6 3c.9-.3 1.6.2 1.3 1.6Z"/></svg></i><span><b>Telegram</b><br><span data-os-store>Play Store</span></span></span></div>
-        <p>Busque <b>Telegram</b> en la <span data-os-store>Play Store</span>. Es el que tiene el avión de papel azul.</p></li>
-      <li><b>Toque "<span data-os-install>Instalar</span>"</b>
-        <div class="mini"><span class="pill" data-os-install>Instalar</span></div>
-        <p>Espere a que termine y toque <b>Abrir</b>.</p></li>
-      <li><b>Escriba su número</b>
-        <div class="mini"><span class="field">+57 300 123 4567</span><span class="pill">Siguiente</span></div>
-        <p>El mismo número de su celular. Le llega un código por mensaje de texto: escríbalo.</p></li>
-      <li><b>Escriba su nombre</b>
-        <div class="mini"><span class="field">Marcela Rodríguez</span></div>
-        <p>Así lo conoceremos. La foto de perfil no es necesaria.</p></li>
-      <li><b>Vuelva aquí y toque el botón</b>
-        <div class="mini"><span class="pill ours">Empezar mi mes gratis</span></div>
-        <p>Se abre Telegram directo en el chat de Fármazon.</p></li>
-      <li><b>Toque "Iniciar"</b>
-        <div class="mini"><span class="pill">INICIAR</span></div>
-        <p>Aparece abajo en la pantalla. Desde ahí lo guiamos paso a paso.</p></li>
-    </ol>
-
-    <div class="stack" style="margin-top:48px">
-      <h3>Avisos que pueden aparecer, y qué tocar</h3>
-      <p class="lead" style="font-size:1.05rem">Son normales. Ninguno le cobra nada ni le pide datos del banco.</p>
-    </div>
-    <div class="popups">
-      <div class="popup">
-        <div class="dialog"><span>"Telegram" quiere enviarle notificaciones</span><div class="acts"><span>No permitir</span><span class="yes">Permitir</span></div></div>
-        <p class="say">Toque "Permitir".</p>
-        <p>Es muy importante: así le suenan nuestros mensajes aunque el celular esté bloqueado.</p>
-      </div>
-      <div class="popup">
-        <div class="dialog"><span>¿Permitir que Telegram acceda a sus contactos?</span><div class="acts"><span class="yes">Ahora no</span><span>Permitir</span></div></div>
-        <p class="say">Puede tocar "Ahora no".</p>
-        <p>No hace falta para el servicio. Si lo permite, tampoco pasa nada.</p>
-      </div>
-      <div class="popup">
-        <div class="dialog"><span>¿Abrir esta página en "Telegram"?</span><div class="acts"><span>Cancelar</span><span class="yes">Abrir</span></div></div>
-        <p class="say">Toque "Abrir".</p>
-        <p>Aparece al tocar el botón azul de esta página. Lo lleva directo al chat de Fármazon.</p>
-      </div>
-    </div>
-    <div class="store-links">
-      <a href="https://play.google.com/store/apps/details?id=org.telegram.messenger" target="_blank" rel="noopener">Descargar en Play Store</a>
-      <a href="https://apps.apple.com/app/telegram-messenger/id686449807" target="_blank" rel="noopener">Descargar en App Store</a>
-    </div>
-  </div>
-</section>
 
 <section>
   <div class="wrap">
@@ -602,11 +531,11 @@ html:not(.con-domicilio) .kb.two:has([data-domicilio]){grid-template-columns:1fr
       <h2>Usted no puede estar a su lado a cada hora. Nosotros sí.</h2>
       <p class="lead">Regálele un mes de tranquilidad a su familia. Es gratis, y empezamos hoy.</p>
       <div class="actions">
-        <a class="cta" data-bot href="#telegram">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21.9 4.6 18.7 19.6c-.2 1-.9 1.3-1.8.8l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.3-5 9.1-8.2c.4-.4-.1-.6-.6-.2L6.2 13.3l-4.8-1.5c-1-.3-1-1 .2-1.5L20.6 3c.9-.3 1.6.2 1.3 1.6Z"/></svg>
+        <a class="cta wa" data-wa="empezar" href="https://wa.me/573189465894" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.2a9.8 9.8 0 0 0-8.4 14.8L2.2 21.8l4.9-1.3A9.8 9.8 0 1 0 12 2.2Zm0 1.9a7.9 7.9 0 1 1-4.1 14.6l-.3-.2-2.9.8.8-2.8-.2-.3A7.9 7.9 0 0 1 12 4.1Zm-3.1 3.8c-.2 0-.5 0-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.2 5 4.4 2.5 1 3 .8 3.5.7.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.4l-2-1c-.3-.1-.5-.1-.7.2l-.9 1.1c-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.4.1-.6l.5-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.5-.4-.5-.6-.5h-.4Z"/></svg>
           Empezar mi mes gratis
         </a>
-        <span class="cta-note">Se abre en Telegram.</span>
+        <span class="cta-note">Se abre en WhatsApp: 318 946 5894.</span>
       </div>
     </div>
   </div>
@@ -628,8 +557,8 @@ html:not(.con-domicilio) .kb.two:has([data-domicilio]){grid-template-columns:1fr
     </div>
     <div class="qr-card">
       <b>¿Lo está viendo en el computador?</b>
-      <div class="qr-box" data-qr role="img" aria-label="Código QR para abrir Fármazon en Telegram desde el celular"></div>
-      <p>Escanee este código con la cámara de su celular y se abre Fármazon en Telegram, listo para empezar.</p>
+      <div class="qr-box" data-qr role="img" aria-label="Código QR para escribirle a Fármazon por WhatsApp desde el celular"></div>
+      <p>Escanee este código con la cámara de su celular y se abre nuestro WhatsApp, listo para empezar.</p>
     </div>
   </div>
 </section>
@@ -639,17 +568,16 @@ html:not(.con-domicilio) .kb.two:has([data-domicilio]){grid-template-columns:1fr
       <div class="stack" style="gap:18px">
         <span class="eyebrow">¿Tiene dudas o preguntas?</span>
         <h2>Pregúntenos antes de empezar</h2>
-        <p class="lead">Escríbanos por Telegram o por WhatsApp al <b>318 946 5894</b>. Le respondemos todo, sin compromiso y sin pedirle datos. Si prefiere, le pedimos su número y lo llamamos.</p>
+        <p class="lead">Escríbanos por WhatsApp al <b>318 946 5894</b>. Le respondemos todo, sin compromiso y sin pedirle datos. Si prefiere, le pedimos su número y lo llamamos.</p>
         <div class="actions">
-          <a class="cta" data-dudas href="#telegram">💬 Resolver mis dudas en Telegram</a>
-          <a class="cta wa" data-wa href="https://wa.me/573189465894" target="_blank" rel="noopener">🟢 Escribirnos por WhatsApp</a>
+          <a class="cta wa" data-wa="pregunta" href="https://wa.me/573189465894" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.2a9.8 9.8 0 0 0-8.4 14.8L2.2 21.8l4.9-1.3A9.8 9.8 0 1 0 12 2.2Zm0 1.9a7.9 7.9 0 1 1-4.1 14.6l-.3-.2-2.9.8.8-2.8-.2-.3A7.9 7.9 0 0 1 12 4.1Zm-3.1 3.8c-.2 0-.5 0-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.2 5 4.4 2.5 1 3 .8 3.5.7.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.4l-2-1c-.3-.1-.5-.1-.7.2l-.9 1.1c-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.4.1-.6l.5-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.5-.4-.5-.6-.5h-.4Z"/></svg> Resolver mis dudas por WhatsApp</a>
         </div>
-        <p class="cta-note">Por favor no nos escriba datos de salud por chat. ¿No tiene Telegram? <a href="#telegram">Aquí le explicamos cómo descargarlo</a>: es gratis y toma 2 minutos.</p>
+        <p class="cta-note">Por favor no nos escriba datos de salud por chat.</p>
       </div>
       <ul class="dudas-list">
         <li>Empezar no cuesta nada</li>
         <li>No le pedimos pago para registrarse</li>
-        <li>Una persona de nuestro equipo le responde</li>
+        <li>Le respondemos rápido, a cualquier hora</li>
         <li>Si quiere, lo llamamos</li>
       </ul>
     </div>
@@ -660,7 +588,7 @@ html:not(.con-domicilio) .kb.two:has([data-domicilio]){grid-template-columns:1fr
 <footer>
   <div class="wrap">
     <span><b>Fármazon</b> · Programa de Adherencia Farmacéutica · Ibagué, Colombia</span>
-    <span>WhatsApp: <a href="https://wa.me/573189465894" data-wa target="_blank" rel="noopener">318 946 5894</a></span>
+    <span>WhatsApp: <a href="https://wa.me/573189465894" data-wa="pregunta" target="_blank" rel="noopener">318 946 5894</a></span>
     <span>Le ayudamos a cumplir el tratamiento que le formuló su médico; no reemplaza su indicación. Tratamiento de datos según la Ley 1581 de 2012: <a href="privacidad.html">política de tratamiento de datos</a>.</span>
   </div>
 </footer>
@@ -668,37 +596,30 @@ html:not(.con-domicilio) .kb.two:has([data-domicilio]){grid-template-columns:1fr
 <script src="js/qrcode.min.js"></script>
 <script>
 (function(){
-  // El proyecto pone aquí el enlace real del chat de Fármazon en Telegram (https://t.me/<usuario>) al publicar.
-  var BOT = "https://t.me/Adherencia_bot";
+  // Todo contacto va al WhatsApp de Fármazon (318 946 5894), donde la asistente atiende y vende.
+  // Telegram queda solo para los clientes que ya contrataron el plan.
+  var WA = "https://wa.me/573189465894";
   var params = new URLSearchParams(location.search);
   var camp = (params.get("c") || "web").replace(/[^a-zA-Z0-9_-]/g,"").slice(0,40);
   // Los anuncios pagados (c=meta_..., tiktok_..., google...) no muestran el domicilio de la droguería aliada (reglas de farmacias de cada plataforma).
   if (!/^(meta_|tiktok_|google)/.test(camp)) document.documentElement.classList.add("con-domicilio");
-  if (BOT) {
-    document.querySelectorAll("[data-bot]").forEach(function(a){
-      a.href = BOT.split("?")[0] + "?start=" + camp; a.target = "_blank"; a.rel = "noopener";
-    });
-    var d = document.getElementById("borrador"); if (d) d.hidden = true;
-    // "¿Tiene dudas?": mismo chat, en modo preguntas; conserva la campaña para saber de dónde vino.
-    document.querySelectorAll("[data-dudas]").forEach(function(a){
-      a.href = BOT.split("?")[0] + "?start=" + ("dudas_" + camp).slice(0, 64); a.target = "_blank"; a.rel = "noopener";
-    });
-    // Código QR: abre el mismo chat desde el celular; la campaña termina en _qr para saber cuántos entran así.
-    if (window.qrcode) {
-      var qr = qrcode(0, "M");
-      qr.addData(BOT.split("?")[0] + "?start=" + (camp + "_qr").slice(0, 64));
-      qr.make();
-      var svg = qr.createSvgTag({ cellSize: 4, margin: 2, scalable: true });
-      document.querySelectorAll("[data-qr]").forEach(function(box){ box.innerHTML = svg; });
-    }
-  }
-  // WhatsApp de Fármazon (318 946 5894): el saludo lleva la campaña para medir de dónde escriben.
+  var d = document.getElementById("borrador"); if (d) d.hidden = true;
+  // El saludo lleva la campaña ("ref") para medir de dónde escriben; el QR termina en _qr.
+  var SALUDO = { empezar: "Hola, quiero empezar mi mes gratis de Fármazon.", pregunta: "Hola, quiero saber más de Fármazon." };
+  function enlaceWa(tipo, ref){ return WA + "?text=" + encodeURIComponent((SALUDO[tipo] || SALUDO.pregunta) + " (ref " + ref + ")"); }
   document.querySelectorAll("[data-wa]").forEach(function(a){
-    a.href = "https://wa.me/573189465894?text=" + encodeURIComponent("Hola, quiero saber más de Fármazon. (ref " + camp + ")");
+    a.href = enlaceWa(a.getAttribute("data-wa"), camp); a.target = "_blank"; a.rel = "noopener";
   });
+  if (window.qrcode) {
+    var qr = qrcode(0, "M");
+    qr.addData(enlaceWa("empezar", (camp + "_qr").slice(0, 44)));
+    qr.make();
+    var svg = qr.createSvgTag({ cellSize: 4, margin: 2, scalable: true });
+    document.querySelectorAll("[data-qr]").forEach(function(box){ box.innerHTML = svg; });
+  }
   // Compartir: el mensaje lleva a esta misma página (la dirección donde se abrió) marcada como "compartido".
   var ENLACE = (/^https?:$/.test(location.protocol) ? location.origin : "https://adherencia-farmaceutica.pages.dev") + "/?c=compartido";
-  var MENSAJE = "Hola 👋 Le comparto Fármazon, por si le sirve a usted o a alguien de su familia: por Telegram le recuerdan cada medicina a la hora exacta y, si no se confirma la toma, avisan a los contactos de emergencia a los 20 minutos. El primer mes es gratis. Toda la información aquí: " + ENLACE;
+  var MENSAJE = "Hola 👋 Le comparto Fármazon, por si le sirve a usted o a alguien de su familia: le recuerdan cada medicina a la hora exacta y, si no se confirma la toma, avisan a los contactos de emergencia a los 20 minutos. El primer mes es gratis. Toda la información aquí: " + ENLACE;
   var wa = document.getElementById("compartir-wa");
   if (wa) wa.href = "https://wa.me/?text=" + encodeURIComponent(MENSAJE);
   var cp = document.getElementById("copiar-enlace"), nota = document.getElementById("copiar-nota");
